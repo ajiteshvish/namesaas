@@ -15,7 +15,6 @@ import { Testimonials } from '@/components/landing/Testimonials';
 import { FAQ } from '@/components/landing/FAQ';
 import { FinalCTA } from '@/components/landing/FinalCTA';
 import { Footer } from '@/components/landing/Footer';
-import { NavigationIndicator } from '@/components/ui/navigation-indicator';
 import { FloatingActionButton } from '@/components/ui/floating-action-button';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 import { ChatbotTrigger } from '@/components/ui/ai-chatbot';
@@ -139,7 +138,6 @@ const Index = () => {
       <ScrollProgress />
       <main className="min-h-screen bg-background">
         <Header />
-        <NavigationIndicator sections={sections} />
         <FloatingActionButton />
         <ChatbotTrigger />
         <section id="hero">
