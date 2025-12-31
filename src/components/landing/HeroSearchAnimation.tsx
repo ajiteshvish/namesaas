@@ -83,24 +83,22 @@ export function HeroSearchAnimation() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ 
-                  duration: 0.5, 
+                transition={{
+                  duration: 0.5,
                   delay: isTyping ? 0 : index * 0.1,
                   layout: { duration: 0.5 }
                 }}
-                className={`relative p-4 rounded-2xl border transition-all duration-500 ${
-                  item.highlight 
-                    ? 'bg-primary/5 border-primary/30 shadow-soft' 
+                className={`relative p-4 rounded-2xl border transition-all duration-500 ${item.highlight
+                    ? 'bg-primary/5 border-primary/30 shadow-soft'
                     : 'bg-secondary/50 border-transparent'
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-4">
                   {/* Position Badge */}
-                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold ${
-                    item.highlight 
-                      ? 'bg-primary text-primary-foreground' 
+                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold ${item.highlight
+                      ? 'bg-primary text-primary-foreground'
                       : 'bg-muted text-muted-foreground'
-                  }`}>
+                    }`}>
                     {item.position}
                   </div>
 
@@ -124,13 +122,12 @@ export function HeroSearchAnimation() {
                     <div className="flex items-center gap-3 mt-1">
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className={`w-3.5 h-3.5 ${
-                              i < Math.floor(item.rating) 
-                                ? 'text-amber-400 fill-amber-400' 
+                          <Star
+                            key={i}
+                            className={`w-3.5 h-3.5 ${i < Math.floor(item.rating)
+                                ? 'text-amber-400 fill-amber-400'
                                 : 'text-muted-foreground/30'
-                            }`} 
+                              }`}
                           />
                         ))}
                         <span className="text-xs text-muted-foreground ml-1">
@@ -159,7 +156,7 @@ export function HeroSearchAnimation() {
         </div>
 
         {/* Status Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
@@ -171,7 +168,7 @@ export function HeroSearchAnimation() {
               <span>NAME is optimizing</span>
             </div>
             {isImproved && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex items-center gap-1.5 text-primary font-medium"

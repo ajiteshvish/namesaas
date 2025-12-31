@@ -1,0 +1,29 @@
+{
+    "nav": {
+        "features": "Funktionen",
+        "howItWorks": "Wie es funktioniert",
+        "pricing": "Preise",
+        "faq": "FAQ",
+        "signUp": "Registrieren"
+    },
+    "hero": {
+        "title": "AI Local SEO Manager, der Ihrem Unternehmen hilft,",
+        "titleHighlight": "automatisch höher zu ranken",
+        "description": "NAME versteht Ihr Unternehmen und verwaltet Ihr komplettes Local SEO—Google Business Profil, Bewertungen, Posts und Website—ohne manuelle Arbeit.",
+        "signUp": "Registrieren",
+        "watchDemo": "Demo ansehen"
+    },
+    "meta": {
+        "title": "NAME - AI Local SEO Manager | Automatisch höher ranken",
+        "description": "NAME ist ein AI-betriebener Local SEO Manager, der automatisch Ihr Google Business Profil, Rankings, Bewertungen, Posts und Website verbessert.",
+        "keywords": "lokales SEO, AI SEO, Google Business Profil, lokale Rankings, Bewertungsmanagement"
+    },
+    "languages": {
+        "en": "Englisch",
+        "pl": "Polnisch",
+        "de": "Deutsch",
+        "fr": "Französisch",
+        "es": "Spanisch",
+        "pt": "Portugiesisch (Brasilien)"
+    }
+}

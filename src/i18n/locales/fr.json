@@ -1,0 +1,29 @@
+{
+    "nav": {
+        "features": "Fonctionnalités",
+        "howItWorks": "Comment ça marche",
+        "pricing": "Tarifs",
+        "faq": "FAQ",
+        "signUp": "S'inscrire"
+    },
+    "hero": {
+        "title": "Gestionnaire SEO Local IA qui aide votre entreprise à",
+        "titleHighlight": "se classer plus haut automatiquement",
+        "description": "NAME comprend votre entreprise et gère votre SEO Local complet—Profil Google Business, avis, publications et site web—sans aucun travail manuel.",
+        "signUp": "S'inscrire",
+        "watchDemo": "Voir la démo"
+    },
+    "meta": {
+        "title": "NAME - Gestionnaire SEO Local IA | Classez-vous plus haut automatiquement",
+        "description": "NAME est un Gestionnaire SEO Local alimenté par l'IA qui améliore automatiquement votre Profil Google Business, classements, avis, publications et site web.",
+        "keywords": "SEO local, IA SEO, Profil Google Business, classements locaux, gestion des avis"
+    },
+    "languages": {
+        "en": "Anglais",
+        "pl": "Polonais",
+        "de": "Allemand",
+        "fr": "Français",
+        "es": "Espagnol",
+        "pt": "Portugais (Brésil)"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "nav": {
+        "features": "Funkcje",
+        "howItWorks": "Jak to działa",
+        "pricing": "Cennik",
+        "faq": "FAQ",
+        "signUp": "Zarejestruj się"
+    },
+    "hero": {
+        "title": "AI Menedżer Lokalnego SEO, który pomaga Twojej firmie",
+        "titleHighlight": "rankować wyżej automatycznie",
+        "description": "NAME rozumie Twoją firmę i zarządza kompletnym Lokalnym SEO—Profil Google Business, recenzje, posty i strona internetowa—bez żadnej ręcznej pracy.",
+        "signUp": "Zarejestruj się",
+        "watchDemo": "Zobacz Demo"
+    },
+    "meta": {
+        "title": "NAME - AI Menedżer Lokalnego SEO | Rankuj Wyżej Automatycznie",
+        "description": "NAME to zasilany AI Menedżer Lokalnego SEO, który automatycznie poprawia Twój Profil Google Business, rankingi, recenzje, posty i stronę internetową.",
+        "keywords": "lokalne SEO, AI SEO, Profil Google Business, lokalne rankingi, zarządzanie recenzjami"
+    },
+    "languages": {
+        "en": "Angielski",
+        "pl": "Polski",
+        "de": "Niemiecki",
+        "fr": "Francuski",
+        "es": "Hiszpański",
+        "pt": "Portugalski (Brazylia)"
+    }
+}

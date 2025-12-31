@@ -1,0 +1,29 @@
+{
+    "nav": {
+        "features": "Recursos",
+        "howItWorks": "Como funciona",
+        "pricing": "Preços",
+        "faq": "FAQ",
+        "signUp": "Cadastrar-se"
+    },
+    "hero": {
+        "title": "Gerenciador de SEO Local com IA que ajuda seu negócio a",
+        "titleHighlight": "ranquear mais alto automaticamente",
+        "description": "NAME entende seu negócio e gerencia seu SEO Local completo—Perfil do Google Business, avaliações, posts e site—sem trabalho manual.",
+        "signUp": "Cadastrar-se",
+        "watchDemo": "Ver demo"
+    },
+    "meta": {
+        "title": "NAME - Gerenciador de SEO Local com IA | Ranqueie mais alto automaticamente",
+        "description": "NAME é um Gerenciador de SEO Local alimentado por IA que melhora automaticamente seu Perfil do Google Business, rankings, avaliações, posts e site.",
+        "keywords": "SEO local, IA SEO, Perfil do Google Business, rankings locais, gerenciamento de avaliações"
+    },
+    "languages": {
+        "en": "Inglês",
+        "pl": "Polonês",
+        "de": "Alemão",
+        "fr": "Francês",
+        "es": "Espanhol",
+        "pt": "Português (Brasil)"
+    }
+}
