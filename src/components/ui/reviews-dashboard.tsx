@@ -75,7 +75,7 @@ export function ReviewsDashboard({ className = '' }: ReviewsDashboardProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className={`bg-white rounded-2xl shadow-xl border border-gray-200 p-6 ${className}`}
+            className={`bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-6 ${className}`}
         >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
@@ -96,7 +96,7 @@ export function ReviewsDashboard({ className = '' }: ReviewsDashboardProps) {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
                 <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -216,7 +216,7 @@ export function ReviewsDashboard({ className = '' }: ReviewsDashboardProps) {
             </AnimatePresence>
 
             {/* Action Buttons */}
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
                 <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

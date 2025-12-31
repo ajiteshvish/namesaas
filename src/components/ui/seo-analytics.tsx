@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Search, TrendingUp, Target, Globe, BarChart3, ArrowUp, ArrowDown, Minus } from 'lucide-react';
+import { Search, TrendingUp, Target, BarChart3, ArrowUp, ArrowDown, Minus } from 'lucide-react';
 
 interface SEOAnalyticsProps {
     className?: string;
@@ -94,7 +94,7 @@ export function SEOAnalytics({ className = '' }: SEOAnalyticsProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className={`bg-white rounded-2xl shadow-xl border border-gray-200 p-6 ${className}`}
+            className={`bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-6 ${className}`}
         >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
@@ -118,7 +118,7 @@ export function SEOAnalytics({ className = '' }: SEOAnalyticsProps) {
             </div>
 
             {/* Key Metrics */}
-            <div className="grid grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
                 <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -240,8 +240,8 @@ export function SEOAnalytics({ className = '' }: SEOAnalyticsProps) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className={`p-3 rounded-lg border ${scanningStatus === 'scanning'
-                            ? 'bg-blue-50 border-blue-200'
-                            : 'bg-green-50 border-green-200'
+                        ? 'bg-blue-50 border-blue-200'
+                        : 'bg-green-50 border-green-200'
                         }`}
                 >
                     <div className="flex items-center gap-2">
@@ -265,7 +265,7 @@ export function SEOAnalytics({ className = '' }: SEOAnalyticsProps) {
             )}
 
             {/* Action Buttons */}
-            <div className="flex gap-3 mt-4">
+            <div className="flex flex-col sm:flex-row gap-3 mt-4">
                 <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

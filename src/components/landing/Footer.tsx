@@ -50,7 +50,7 @@ export function Footer() {
   return (
     <footer className="bg-white border-t border-neutral-200 py-16">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <motion.div
@@ -64,7 +64,8 @@ export function Footer() {
                 <img
                   src="/site.ico"
                   alt="SARALONE Logo"
-                  className="h-8 w-auto"
+                  className="h-8 w-auto hover:opacity-90 transition-opacity"
+                  loading="lazy"
                 />
               </div>
 

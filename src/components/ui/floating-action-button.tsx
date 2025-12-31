@@ -12,7 +12,7 @@ export function FloatingActionButton() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="fixed bottom-24 right-4 z-40">
+        <div className="fixed bottom-24 sm:bottom-28 right-4 z-40">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -35,7 +35,7 @@ export function FloatingActionButton() {
                                 </span>
                                 <motion.a
                                     href={action.href}
-                                    className={`w-12 h-12 rounded-full ${action.color} flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow`}
+                                    className={`w-12 h-12 rounded-full ${action.color} flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow touch-target mobile-tap`}
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
                                 >
@@ -49,12 +49,12 @@ export function FloatingActionButton() {
 
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-14 h-14 rounded-full bg-gradient-to-br from-soft-blue to-light-purple flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-soft-blue to-light-purple flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow touch-target mobile-tap"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 animate={{ rotate: isOpen ? 45 : 0 }}
             >
-                {isOpen ? <X className="w-6 h-6" /> : <Plus className="w-6 h-6" />}
+                {isOpen ? <X className="w-4 h-4 sm:w-6 sm:h-6" /> : <Plus className="w-4 h-4 sm:w-6 sm:h-6" />}
             </motion.button>
         </div>
     );

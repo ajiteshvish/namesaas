@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, Send, X, Bot, User, Sparkles, ArrowUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { MessageCircle, Send, X, Bot, User } from 'lucide-react';
 
 interface Message {
     id: string;
@@ -23,7 +22,7 @@ const predefinedResponses = {
         "Hey! I'm SARA, and I'm excited to help you discover how SARALONE can boost your local search rankings. What can I help you with today?"
     ],
     pricing: [
-        "SARALONE offers three main plans:\n\n🚀 **Starter** - $29/month\n• Perfect for single location businesses\n• AI-powered Google Business Profile optimization\n• Automated review responses\n• Basic reporting\n\n💼 **Professional** - $79/month\n• Everything in Starter\n• Advanced SEO analytics\n• Social media scheduling\n• Priority support\n\n🏢 **Enterprise** - Custom pricing\n• Multi-location management\n• White-label options\n• Dedicated account manager\n• Custom integrations\n\nAll plans come with a free trial! Would you like to know more about any specific plan?"
+        "SARALONE offers comprehensive plans for different needs:\n\n🇮🇳 **India Business Owner Plans:**\n• Business Owner Premium - ₹10,000/GMB (Done-For-You)\n• Business Owner - ₹6,000/GMB (Self-Serve SaaS)\n\n🌍 **Global Business Owner Plans:**\n• Business Owner - $199/GMB (Done-For-You)\n• Premium Business Owner - $129/GMB (Self-Serve SaaS)\n\n🏢 **Agency Plans (India):**\n• Agency Starter - ₹24,000 (20 GMB)\n• Agency Growth - ₹36,000 (50 GMB)\n• Agency Scale - ₹60,000 (100 GMB)\n\n💰 **Special Referral Models:**\n• Non-Commitment: 20% commission\n• Commitment (₹1L): 35% commission\n• High Commitment (₹3L): 50% commission\n\nAll plans include 20% referral rewards. Which plan interests you most?"
     ],
     features: [
         "SARALONE's AI handles your complete local SEO automatically:\n\n🎯 **Google Business Profile Optimization**\n• Automatic profile updates\n• Keyword optimization\n• Photo management\n\n⭐ **Review Management**\n• AI-generated authentic responses\n• Review monitoring\n• Sentiment analysis\n\n📱 **Content & Social Media**\n• Automated post scheduling\n• Seasonal content creation\n• Multi-platform publishing\n\n📊 **SEO Analytics**\n• Real-time ranking tracking\n• Traffic analysis\n• Competitor insights\n\nWhat specific feature interests you most?"
@@ -193,23 +192,23 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-4 right-4 w-96 h-[600px] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col z-50 overflow-hidden"
+            className="fixed inset-x-4 bottom-4 sm:right-4 sm:left-auto sm:w-96 h-[calc(100vh-8rem)] sm:h-[600px] max-h-[600px] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col z-50 overflow-hidden mobile-safe-area"
         >
             {/* Header */}
-            <div className="bg-gradient-to-r from-soft-blue to-light-purple p-4 text-white">
+            <div className="bg-gradient-to-r from-soft-blue to-light-purple p-3 sm:p-4 text-white">
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                            <Bot className="w-5 h-5" />
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <Bot className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                         <div>
-                            <h3 className="font-semibold">SARA AI Assistant</h3>
+                            <h3 className="font-semibold text-sm sm:text-base">SARA AI Assistant</h3>
                             <p className="text-xs opacity-90">Always here to help</p>
                         </div>
                     </div>
                     <button
                         onClick={onClose}
-                        className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors"
+                        className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors touch-target"
                     >
                         <X className="w-4 h-4" />
                     </button>
@@ -217,7 +216,7 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 mobile-scroll">
                 <AnimatePresence>
                     {messages.map((message) => (
                         <motion.div
@@ -225,19 +224,19 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
-                            className={`flex gap-3 ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                            className={`flex gap-2 sm:gap-3 ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
                         >
                             {message.type === 'bot' && (
-                                <div className="w-8 h-8 bg-gradient-to-br from-soft-blue to-light-purple rounded-full flex items-center justify-center shrink-0">
-                                    <Bot className="w-4 h-4 text-white" />
+                                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-soft-blue to-light-purple rounded-full flex items-center justify-center shrink-0">
+                                    <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                                 </div>
                             )}
 
-                            <div className={`max-w-[80%] rounded-2xl px-4 py-3 ${message.type === 'user'
+                            <div className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-3 py-2 sm:px-4 sm:py-3 ${message.type === 'user'
                                 ? 'bg-soft-blue text-white'
                                 : 'bg-gray-100 text-gray-900'
                                 }`}>
-                                <div className="text-sm whitespace-pre-line">{message.content}</div>
+                                <div className="text-xs sm:text-sm whitespace-pre-line">{message.content}</div>
                                 <div className={`text-xs mt-1 opacity-70 ${message.type === 'user' ? 'text-white/70' : 'text-gray-500'
                                     }`}>
                                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -245,8 +244,8 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
                             </div>
 
                             {message.type === 'user' && (
-                                <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center shrink-0">
-                                    <User className="w-4 h-4 text-gray-600" />
+                                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-full flex items-center justify-center shrink-0">
+                                    <User className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" />
                                 </div>
                             )}
                         </motion.div>
@@ -258,12 +257,12 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex gap-3 justify-start"
+                        className="flex gap-2 sm:gap-3 justify-start"
                     >
-                        <div className="w-8 h-8 bg-gradient-to-br from-soft-blue to-light-purple rounded-full flex items-center justify-center">
-                            <Bot className="w-4 h-4 text-white" />
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-soft-blue to-light-purple rounded-full flex items-center justify-center">
+                            <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                         </div>
-                        <div className="bg-gray-100 rounded-2xl px-4 py-3">
+                        <div className="bg-gray-100 rounded-2xl px-3 py-2 sm:px-4 sm:py-3">
                             <div className="flex gap-1">
                                 <motion.div
                                     animate={{ opacity: [0.3, 1, 0.3] }}
@@ -294,7 +293,7 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
                         className="space-y-2"
                     >
                         <p className="text-xs text-gray-500 px-2">Quick questions:</p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1 sm:gap-2">
                             {quickReplies.map((reply, index) => (
                                 <motion.button
                                     key={reply}
@@ -302,7 +301,7 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 0.6 + index * 0.1 }}
                                     onClick={() => handleQuickReply(reply)}
-                                    className="text-xs bg-soft-blue/10 text-soft-blue px-3 py-2 rounded-full hover:bg-soft-blue/20 transition-colors"
+                                    className="text-xs bg-soft-blue/10 text-soft-blue px-2 py-1 sm:px-3 sm:py-2 rounded-full hover:bg-soft-blue/20 transition-colors touch-target mobile-tap"
                                 >
                                     {reply}
                                 </motion.button>
@@ -315,24 +314,24 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
             </div>
 
             {/* Input */}
-            <div className="p-4 border-t border-gray-200">
+            <div className="p-3 sm:p-4 border-t border-gray-200">
                 <div className="flex gap-2">
                     <div className="flex-1 relative">
                         <textarea
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
-                            onKeyPress={handleKeyPress}
+                            onKeyDown={handleKeyPress}
                             placeholder="Ask me anything about SARALONE..."
-                            className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-soft-blue/20 focus:border-soft-blue text-sm"
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3 pr-10 sm:pr-12 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-soft-blue/20 focus:border-soft-blue text-xs sm:text-sm"
                             rows={1}
-                            style={{ minHeight: '44px', maxHeight: '100px' }}
+                            style={{ minHeight: '40px', maxHeight: '80px' }}
                         />
                         <button
                             onClick={handleSendMessage}
                             disabled={!inputValue.trim()}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-soft-blue text-white rounded-lg flex items-center justify-center hover:bg-soft-blue/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 bg-soft-blue text-white rounded-lg flex items-center justify-center hover:bg-soft-blue/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed touch-target mobile-tap"
                         >
-                            <Send className="w-4 h-4" />
+                            <Send className="w-3 h-3 sm:w-4 sm:h-4" />
                         </button>
                     </div>
                 </div>
@@ -350,14 +349,14 @@ export function ChatbotTrigger() {
     const [hasNewMessage, setHasNewMessage] = useState(false);
 
     useEffect(() => {
-        // Show notification after 10 seconds if chatbot hasn't been opened
-        const timer = setTimeout(() => {
-            if (!isOpen) {
-                setHasNewMessage(true);
-            }
-        }, 10000);
+        // Disabled automatic notification popup
+        // const timer = setTimeout(() => {
+        //     if (!isOpen) {
+        //         setHasNewMessage(true);
+        //     }
+        // }, 10000);
 
-        return () => clearTimeout(timer);
+        // return () => clearTimeout(timer);
     }, [isOpen]);
 
     const handleOpen = () => {
@@ -371,9 +370,9 @@ export function ChatbotTrigger() {
                 onClick={handleOpen}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="fixed bottom-4 right-4 w-16 h-16 bg-gradient-to-r from-soft-blue to-light-purple text-white rounded-full shadow-2xl flex items-center justify-center z-50 hover:shadow-3xl transition-shadow"
+                className="fixed bottom-4 right-4 w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-soft-blue to-light-purple text-white rounded-full shadow-2xl flex items-center justify-center z-50 hover:shadow-3xl transition-shadow touch-target mobile-tap"
             >
-                <MessageCircle className="w-6 h-6" />
+                <MessageCircle className="w-6 h-6 sm:w-6 sm:h-6" />
 
                 {/* Notification Badge */}
                 {hasNewMessage && (

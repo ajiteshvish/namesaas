@@ -14,41 +14,77 @@ export const chatbotKnowledge = {
 
     // Pricing Plans
     pricing: {
-        starter: {
-            name: "Starter",
-            price: "$29/month",
-            features: [
-                "AI-powered Google Business Profile optimization",
-                "Automated review responses",
-                "Basic reporting",
-                "Single location",
-                "14-day free trial"
-            ],
-            bestFor: "Single location businesses"
+        indiaBusinessOwner: {
+            premium: {
+                name: "Business Owner Premium",
+                price: "₹10,000/GMB",
+                model: "Done-For-You",
+                referral: "20% / Special Models",
+                bestFor: "Business owners who want full service"
+            },
+            standard: {
+                name: "Business Owner",
+                price: "₹6,000/GMB",
+                model: "Self-Serve SaaS",
+                referral: "20% / Special Models",
+                bestFor: "Business owners who prefer self-service"
+            }
         },
-        professional: {
-            name: "Professional",
-            price: "$79/month",
-            features: [
-                "Everything in Starter",
-                "Advanced SEO analytics",
-                "Social media scheduling",
-                "Priority support",
-                "Multi-location support (up to 5)"
-            ],
-            bestFor: "Growing businesses with multiple locations"
+        globalBusinessOwner: {
+            standard: {
+                name: "Business Owner",
+                price: "$199/GMB",
+                model: "Done-For-You",
+                referral: "20% / Special Models",
+                bestFor: "Global business owners wanting full service"
+            },
+            premium: {
+                name: "Premium Business Owner",
+                price: "$129/GMB",
+                model: "Self-Serve SaaS",
+                referral: "20% / Special Models",
+                bestFor: "Global business owners preferring self-service"
+            }
         },
-        enterprise: {
-            name: "Enterprise",
-            price: "Custom pricing",
-            features: [
-                "Unlimited locations",
-                "White-label options",
-                "Dedicated account manager",
-                "Custom integrations",
-                "Advanced reporting & analytics"
-            ],
-            bestFor: "Large businesses and agencies"
+        agency: {
+            starter: {
+                name: "Agency Starter",
+                accounts: "20 GMB",
+                price: "₹24,000",
+                referral: "Special Models",
+                bestFor: "Small agencies starting out"
+            },
+            growth: {
+                name: "Agency Growth",
+                accounts: "50 GMB",
+                price: "₹36,000",
+                referral: "Flat 10%",
+                bestFor: "Growing agencies"
+            },
+            scale: {
+                name: "Agency Scale",
+                accounts: "100 GMB",
+                price: "₹60,000",
+                referral: "Flat 10%",
+                bestFor: "Large agencies"
+            }
+        },
+        specialReferral: {
+            nonCommitment: {
+                model: "Non-Commitment",
+                commitment: "₹0",
+                commission: "20%"
+            },
+            commitment: {
+                model: "Commitment",
+                commitment: "₹1,00,000",
+                commission: "35%"
+            },
+            highCommitment: {
+                model: "High Commitment",
+                commitment: "₹3,00,000",
+                commission: "50%"
+            }
         }
     },
 
@@ -150,17 +186,17 @@ export const getContextualResponse = (topic: string, userMessage: string): strin
 
     switch (topic) {
         case 'pricing':
-            if (message.includes('starter')) {
-                const plan = chatbotKnowledge.pricing.starter;
-                return `The ${plan.name} plan is ${plan.price} and perfect for ${plan.bestFor}. It includes:\n\n${plan.features.map(f => `• ${f}`).join('\n')}\n\nReady to start your free trial? Visit: https://login.saralone.com/`;
+            if (message.includes('india') || message.includes('indian')) {
+                return `**India Business Owner Plans:**\n\n• **Business Owner Premium** - ₹10,000/GMB (Done-For-You)\n  Perfect for business owners who want full service\n\n• **Business Owner** - ₹6,000/GMB (Self-Serve SaaS)\n  Great for business owners who prefer self-service\n\nBoth plans include 20% referral rewards. Which model interests you more?`;
             }
-            if (message.includes('professional')) {
-                const plan = chatbotKnowledge.pricing.professional;
-                return `The ${plan.name} plan is ${plan.price} and ideal for ${plan.bestFor}. It includes:\n\n${plan.features.map(f => `• ${f}`).join('\n')}\n\nThis is our most popular plan! Want to learn more?`;
+            if (message.includes('global') || message.includes('international')) {
+                return `**Global Business Owner Plans:**\n\n• **Business Owner** - $199/GMB (Done-For-You)\n  Full service for global business owners\n\n• **Premium Business Owner** - $129/GMB (Self-Serve SaaS)\n  Self-service option for global markets\n\nBoth plans include 20% referral rewards. Ready to get started?`;
             }
-            if (message.includes('enterprise')) {
-                const plan = chatbotKnowledge.pricing.enterprise;
-                return `The ${plan.name} plan offers ${plan.price} and is designed for ${plan.bestFor}. It includes:\n\n${plan.features.map(f => `• ${f}`).join('\n')}\n\nLet's schedule a call to discuss your specific needs!`;
+            if (message.includes('agency') || message.includes('agencies')) {
+                return `**Agency Plans (India):**\n\n• **Agency Starter** - ₹24,000 (20 GMB accounts)\n  Special referral models available\n\n• **Agency Growth** - ₹36,000 (50 GMB accounts)\n  Flat 10% referral\n\n• **Agency Scale** - ₹60,000 (100 GMB accounts)\n  Flat 10% referral\n\nWhich agency plan fits your needs?`;
+            }
+            if (message.includes('referral') || message.includes('commission')) {
+                return `**Special Referral Models (Agency Starter only):**\n\n• **Non-Commitment** - ₹0 commitment, 20% commission\n• **Commitment** - ₹1,00,000 commitment, 35% commission\n• **High Commitment** - ₹3,00,000 commitment, 50% commission\n\nHigher commitment = Higher rewards! Which model interests you?`;
             }
             break;
 

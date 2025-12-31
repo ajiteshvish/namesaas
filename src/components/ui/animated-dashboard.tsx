@@ -72,7 +72,7 @@ export function AnimatedDashboard({ variant = 'analytics', className = '' }: Das
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className={`bg-white rounded-2xl shadow-xl border border-gray-200 p-6 ${className}`}
+            className={`bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-6 ${className}`}
         >
             {/* Browser Header */}
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-gray-200">
@@ -105,12 +105,12 @@ export function AnimatedDashboard({ variant = 'analytics', className = '' }: Das
             </motion.div>
 
             {/* Metrics Grid */}
-            <div className="grid grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="bg-gray-50 rounded-xl p-4 text-center"
+                    className="bg-gray-50 rounded-xl p-3 sm:p-4 text-center"
                 >
                     <motion.div
                         key={metrics.seoScore}
@@ -127,7 +127,7 @@ export function AnimatedDashboard({ variant = 'analytics', className = '' }: Das
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    className="bg-gray-50 rounded-xl p-4 text-center"
+                    className="bg-gray-50 rounded-xl p-3 sm:p-4 text-center"
                 >
                     <motion.div
                         key={metrics.reviews}
@@ -144,7 +144,7 @@ export function AnimatedDashboard({ variant = 'analytics', className = '' }: Das
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="bg-gray-50 rounded-xl p-4 text-center"
+                    className="bg-gray-50 rounded-xl p-3 sm:p-4 text-center"
                 >
                     <motion.div
                         key={metrics.ranking}
