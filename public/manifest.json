@@ -1,0 +1,33 @@
+{
+    "name": "SARALONE - AI Local SEO Manager",
+    "short_name": "SARALONE",
+    "description": "AI-powered Local SEO Manager that automatically improves your Google Business Profile, rankings, reviews, posts, and website.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3b82f6",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/site.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/site.ico",
+            "sizes": "192x192",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/site.ico",
+            "sizes": "512x512",
+            "type": "image/x-icon"
+        }
+    ],
+    "categories": [
+        "business",
+        "productivity",
+        "utilities"
+    ],
+    "lang": "en-US"
+}

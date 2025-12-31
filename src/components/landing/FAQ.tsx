@@ -8,12 +8,12 @@ import {
 
 const faqs = [
   {
-    question: 'How does NAME work?',
-    answer: 'NAME uses AI to analyze your business, audit your online presence, and automatically optimize your Google Business Profile, reviews, posts, and website. Simply connect your accounts, and our AI handles the rest.',
+    question: 'How does SARALONE work?',
+    answer: 'SARALONE uses AI to analyze your business, audit your online presence, and automatically optimize your Google Business Profile, reviews, posts, and website. Simply connect your accounts, and our AI handles the rest.',
   },
   {
-    question: 'Do I need technical knowledge to use NAME?',
-    answer: 'Not at all! NAME is designed to be simple and intuitive. There\'s no learning curve—just connect your business and let the AI work. Everything is automated and explained in plain language.',
+    question: 'Do I need technical knowledge to use SARALONE?',
+    answer: 'Not at all! SARALONE is designed to be simple and intuitive. There\'s no learning curve—just connect your business and let the AI work. Everything is automated and explained in plain language.',
   },
   {
     question: 'How long does it take to see results?',
@@ -24,7 +24,7 @@ const faqs = [
     answer: 'Absolutely. We use enterprise-grade encryption and security measures. Your data is never sold or shared with third parties. We\'re fully compliant with GDPR, CCPA, and other data protection regulations.',
   },
   {
-    question: 'Can I use NAME for multiple locations?',
+    question: 'Can I use SARALONE for multiple locations?',
     answer: 'Yes! Our Enterprise plan is designed for multi-location businesses and agencies. You can manage all your locations from a single dashboard.',
   },
   {
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     question: 'Do you offer a free trial?',
-    answer: 'Yes! All plans come with a free trial so you can experience the full power of NAME before committing. No credit card required to start.',
+    answer: 'Yes! All plans come with a free trial so you can experience the full power of SARALONE before committing. No credit card required to start.',
   },
 ];
 

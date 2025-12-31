@@ -22,9 +22,9 @@ export function FinalCTA() {
             Let AI manage your Local SEO while you{' '}
             <span className="gradient-text glow-text">focus on your business</span>
           </h2>
-          
+
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Join thousands of businesses already growing with NAME. 
+            Join thousands of businesses already growing with SARALONE.
             Start your free trial today—no credit card required.
           </p>
 
@@ -35,13 +35,17 @@ export function FinalCTA() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button variant="hero" size="xl" className="glow">
-              Start Free Trial
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <Button variant="hero" size="xl" className="glow" asChild>
+              <a href="https://login.saralone.com/">
+                Start Free Trial
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
             </Button>
-            <Button variant="heroOutline" size="xl">
-              <Calendar className="w-5 h-5 mr-2" />
-              Book Demo
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="mailto:support@saralone.com?subject=Demo Request">
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Demo
+              </a>
             </Button>
           </motion.div>
 

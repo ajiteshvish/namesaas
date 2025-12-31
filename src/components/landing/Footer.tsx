@@ -1,126 +1,228 @@
 import { motion } from 'framer-motion';
-import { Globe, Mail, Twitter, Linkedin, Github } from 'lucide-react';
+import { Phone, Mail, MessageCircle } from 'lucide-react';
 
-const footerLinks = {
-  product: [
-    { label: 'Features', href: '#features' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Changelog', href: '#' },
-  ],
-  company: [
-    { label: 'About', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Careers', href: '#' },
-    { label: 'Contact', href: '#' },
-  ],
-  legal: [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Cookie Policy', href: '#' },
-    { label: 'GDPR', href: '#' },
-  ],
+const footerSections = {
+  services: {
+    title: 'OUR SERVICES',
+    links: [
+      { label: 'AI Agents', href: '#ai-agents' },
+      { label: 'Enterprise Software', href: '#enterprise-software' },
+      { label: 'Ecommerce', href: '#ecommerce' },
+      { label: 'MVP/Custom Software', href: '#mvp-custom' },
+      { label: 'Websites', href: '#websites' },
+      { label: 'Internal/Business Tools', href: '#business-tools' },
+    ]
+  },
+  industry: {
+    title: 'INDUSTRY',
+    links: [
+      { label: 'Healthcare', href: '#healthcare' },
+      { label: 'Logistics', href: '#logistics' },
+      { label: 'Ecommerce', href: '#ecommerce-industry' },
+      { label: 'Real Estate', href: '#real-estate' },
+      { label: 'Retail', href: '#retail' },
+      { label: 'Manufacturing', href: '#manufacturing' },
+      { label: 'AI/ML, Deeptech, IoT etc', href: '#ai-ml' },
+    ]
+  },
+  about: {
+    title: 'ABOUT US',
+    links: [
+      { label: 'About', href: '#about' },
+      { label: 'Career', href: '#career' },
+      { label: 'Projects', href: '#projects' },
+      { label: 'Blogs', href: '#blogs' },
+    ]
+  },
+  presence: {
+    title: 'OUR PRESENCE',
+    links: [
+      { label: 'Clutch (5/5 Rating Placeholder)', href: '#clutch' },
+      { label: 'GoodFirms', href: '#goodfirms' },
+      { label: 'awwwards', href: '#awwwards' },
+      { label: 'Behance', href: '#behance' },
+      { label: 'Dribbble', href: '#dribbble' },
+    ]
+  }
 };
-
-const socialLinks = [
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Mail, href: '#', label: 'Email' },
-];
 
 export function Footer() {
   return (
-    <footer className="py-16 border-t border-border/50">
+    <footer className="bg-white border-t border-neutral-200 py-16">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-xl font-bold text-primary-foreground">N</span>
+        <div className="grid lg:grid-cols-5 gap-12 mb-12">
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              {/* SARALONE Logo */}
+              <div className="mb-6">
+                <img
+                  src="/site.ico"
+                  alt="SARALONE Logo"
+                  className="h-8 w-auto"
+                />
               </div>
-              <span className="text-xl font-bold text-foreground">NAME</span>
-            </div>
-            <p className="text-muted-foreground mb-6 max-w-sm">
-              AI-powered Local SEO Manager that helps businesses rank higher, automatically.
-            </p>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Globe className="w-4 h-4" />
-              <span>Available worldwide</span>
-            </div>
+
+              {/* Address */}
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-foreground mb-2">INDIA</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  F-1, C-09, KLIC, Bhopal,<br />
+                  Madhya Pradesh,<br />
+                  462023, India
+                </p>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">7771880677</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">Saraloneoffice@gmail.com</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Product</h4>
+          {/* Services Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <h4 className="text-sm font-bold text-soft-blue mb-6">{footerSections.services.title}</h4>
             <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.label}>
+              {footerSections.services.links.map((link, index) => (
+                <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-soft-blue transition-colors duration-200"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
+          {/* Industry Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h4 className="text-sm font-bold text-soft-blue mb-6">{footerSections.industry.title}</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
+              {footerSections.industry.links.map((link, index) => (
+                <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-soft-blue transition-colors duration-200"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Legal</h4>
+          {/* About Us Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h4 className="text-sm font-bold text-soft-blue mb-6">{footerSections.about.title}</h4>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
+              {footerSections.about.links.map((link, index) => (
+                <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-soft-blue transition-colors duration-200"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
+
+          {/* Our Presence Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <h4 className="text-sm font-bold text-soft-blue mb-6">{footerSections.presence.title}</h4>
+            <ul className="space-y-3">
+              {footerSections.presence.links.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-soft-blue transition-colors duration-200"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
 
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border/50">
-          <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © {new Date().getFullYear()} NAME. All rights reserved.
-          </p>
+        {/* Bottom Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-neutral-200"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-4 md:mb-0">
+            <a
+              href="#terms"
+              className="text-sm text-muted-foreground hover:text-soft-blue transition-colors"
+            >
+              Term & Conditions
+            </a>
+            <a
+              href="#privacy"
+              className="text-sm text-muted-foreground hover:text-soft-blue transition-colors"
+            >
+              Privacy Policy
+            </a>
+          </div>
 
           <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="w-5 h-5" />
-              </motion.a>
-            ))}
+            <p className="text-sm text-muted-foreground">
+              © 2025 SaralOne All Rights Reserved
+            </p>
+
+            {/* WhatsApp Button */}
+            <motion.a
+              href="https://wa.me/7771880677"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow"
+              aria-label="Contact us on WhatsApp"
+            >
+              <MessageCircle className="w-6 h-6" />
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

@@ -16,6 +16,7 @@ const plans = [
       'Email support',
     ],
     cta: 'Start Free Trial',
+    ctaLink: 'https://login.saralone.com/',
     popular: false,
   },
   {
@@ -32,6 +33,7 @@ const plans = [
       'Custom domain',
     ],
     cta: 'Start Free Trial',
+    ctaLink: 'https://login.saralone.com/',
     popular: true,
   },
   {
@@ -48,6 +50,7 @@ const plans = [
       'Custom integrations',
     ],
     cta: 'Contact Sales',
+    ctaLink: 'mailto:support@saralone.com',
     popular: false,
   },
 ];
@@ -69,7 +72,7 @@ export function Pricing() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
             Choose the plan that fits your business. No hidden fees, cancel anytime.
           </p>
-          
+
           {/* Global Payment Badge */}
           <div className="inline-flex items-center gap-3 glass rounded-full px-4 py-2 border border-border/50">
             <Globe className="w-4 h-4 text-primary" />
@@ -86,9 +89,8 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative glass rounded-2xl p-8 border ${
-                plan.popular ? 'border-primary shadow-lg glow' : 'border-border/50'
-              }`}
+              className={`relative glass rounded-2xl p-8 border ${plan.popular ? 'border-primary shadow-lg glow' : 'border-border/50'
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -123,8 +125,9 @@ export function Pricing() {
                 variant={plan.popular ? 'hero' : 'heroOutline'}
                 size="lg"
                 className="w-full"
+                asChild
               >
-                {plan.cta}
+                <a href={plan.ctaLink}>{plan.cta}</a>
               </Button>
             </motion.div>
           ))}

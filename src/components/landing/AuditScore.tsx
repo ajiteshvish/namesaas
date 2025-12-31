@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
+import { SEOAnalytics } from '@/components/ui/seo-analytics';
 
 const scoreBreakdown = [
   { label: 'Profile completeness', score: 92, status: 'good' },
@@ -32,76 +33,33 @@ export function AuditScore() {
   const overallScore = 79;
 
   return (
-    <section id="features" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 section-gradient opacity-30" />
-      
+    <section id="features" className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-light/10 to-purple-light/10">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
             Your <span className="gradient-text">SEO Score</span> out of 100
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Transparent, actionable insights. No human onboarding required.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Score Visualization */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          {/* SEO Analytics Dashboard */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex justify-center"
+            className="relative"
           >
-            <div className="relative">
-              {/* Outer Ring */}
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-secondary flex items-center justify-center relative">
-                {/* Animated Progress Ring */}
-                <svg className="absolute inset-0 w-full h-full -rotate-90">
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="45%"
-                    fill="none"
-                    stroke="url(#scoreGradient)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeDasharray={`${overallScore * 2.83} 283`}
-                    className="transition-all duration-1000"
-                  />
-                  <defs>
-                    <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="hsl(var(--cyan))" />
-                      <stop offset="100%" stopColor="hsl(var(--teal))" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                {/* Score Display */}
-                <div className="text-center z-10">
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                    className="text-6xl md:text-7xl font-bold gradient-text"
-                  >
-                    {overallScore}
-                  </motion.span>
-                  <p className="text-muted-foreground mt-2">Overall Score</p>
-                </div>
-              </div>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl -z-10" />
-            </div>
+            <SEOAnalytics />
           </motion.div>
 
           {/* Score Breakdown */}
@@ -110,11 +68,11 @@ export function AuditScore() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass rounded-2xl p-6 md:p-8 border border-border/50"
+            className="card-soft p-8 hover-lift"
           >
-            <h3 className="text-xl font-semibold text-foreground mb-6">Score Breakdown</h3>
-            
-            <div className="space-y-5">
+            <h3 className="text-2xl font-semibold text-foreground mb-8">Score Breakdown</h3>
+
+            <div className="space-y-6">
               {scoreBreakdown.map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -123,19 +81,19 @@ export function AuditScore() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.1 }}
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-3">
                       {getStatusIcon(item.status)}
-                      <span className="text-sm text-foreground">{item.label}</span>
+                      <span className="text-foreground font-medium">{item.label}</span>
                     </div>
-                    <span className="text-sm font-semibold text-foreground">{item.score}%</span>
+                    <span className="text-lg font-bold text-foreground">{item.score}%</span>
                   </div>
-                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                  <div className="h-3 bg-neutral-200 rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${item.score}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
+                      transition={{ duration: 1.2, delay: 0.5 + index * 0.1, ease: "easeOut" }}
                       className={`h-full rounded-full ${getScoreColor(item.score)}`}
                     />
                   </div>
@@ -143,12 +101,18 @@ export function AuditScore() {
               ))}
             </div>
 
-            <div className="mt-8 p-4 bg-primary/10 rounded-xl border border-primary/30">
-              <p className="text-sm text-muted-foreground">
-                <span className="text-primary font-semibold">💡 Insight:</span> Your post frequency needs attention. 
-                NAME can automatically schedule posts to improve this score.
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 1.0 }}
+              className="mt-8 p-6 bg-gradient-to-r from-soft-blue/10 to-light-purple/10 rounded-2xl border border-soft-blue/20"
+            >
+              <p className="text-muted-foreground leading-relaxed">
+                <span className="text-soft-blue font-semibold">💡 AI Insight:</span> Your post frequency needs attention.
+                SARALONE can automatically schedule engaging posts to improve this score by 40+ points.
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

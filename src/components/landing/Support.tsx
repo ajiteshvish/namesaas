@@ -6,7 +6,7 @@ const supportChannels = [
     icon: Mail,
     title: 'Email support',
     description: 'Get help directly from our team via email.',
-    detail: 'support@name.com',
+    detail: 'support@saralone.com',
   },
   {
     icon: LayoutDashboard,
