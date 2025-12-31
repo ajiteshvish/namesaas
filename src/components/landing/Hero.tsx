@@ -58,9 +58,11 @@ export function Hero() {
               <Button variant="hero" size="lg" className="shadow-lg hover-lift" asChild>
                 <a href="https://login.saralone.com/">Get Started</a>
               </Button>
-              <Button variant="heroOutline" size="lg" className="hover-lift">
-                <Play className="w-5 h-5" />
-                Watch Demo
+              <Button variant="heroOutline" size="lg" className="hover-lift" asChild>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6ao8MXwubcMeoWlHzb-mTNVf4id50Dq7xXBW3YqQkauJ9RA/viewform">
+                  <Play className="w-5 h-5" />
+                  Book Demo
+                </a>
               </Button>
             </motion.div>
 

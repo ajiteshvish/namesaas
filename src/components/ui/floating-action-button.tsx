@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Plus, Phone, Mail, Zap, X } from 'lucide-react';
+import { Plus, Phone, Mail, Zap, X, Calendar } from 'lucide-react';
 
 const quickActions = [
     { icon: Zap, label: 'Sign Up', href: 'https://login.saralone.com/', color: 'bg-soft-blue' },
+    { icon: Calendar, label: 'Book Demo', href: 'https://docs.google.com/forms/d/e/1FAIpQLSe6ao8MXwubcMeoWlHzb-mTNVf4id50Dq7xXBW3YqQkauJ9RA/viewform', color: 'bg-purple-500' },
     { icon: Phone, label: 'Call Us', href: 'tel:+917771880677', color: 'bg-green-500' },
     { icon: Mail, label: 'Email', href: 'mailto:support@saralone.com', color: 'bg-orange-500' },
 ];
@@ -19,7 +20,7 @@ export function FloatingActionButton() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
-                        className="absolute bottom-16 right-0 space-y-3"
+                        className="absolute bottom-20 right-0 space-y-3"
                     >
                         {quickActions.map((action, index) => (
                             <motion.div

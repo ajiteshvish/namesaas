@@ -42,7 +42,7 @@ export function FinalCTA() {
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="mailto:support@saralone.com?subject=Demo Request">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6ao8MXwubcMeoWlHzb-mTNVf4id50Dq7xXBW3YqQkauJ9RA/viewform">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Demo
               </a>

@@ -97,16 +97,6 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-soft-blue/20 mb-6 shadow-soft">
-            <img
-              src="/site.ico"
-              alt="SARALONE"
-              className="w-6 h-6 hover:opacity-90 transition-opacity"
-              loading="lazy"
-            />
-            <span className="text-sm font-medium text-muted-foreground">SARALONE</span>
-          </div>
-
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Plans & <span className="gradient-text">Pricing</span>
           </h2>
@@ -365,7 +355,7 @@ export function Pricing() {
                 <a href="https://login.saralone.com/">Start Free Trial</a>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
-                <a href="mailto:support@saralone.com">Contact Sales</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6ao8MXwubcMeoWlHzb-mTNVf4id50Dq7xXBW3YqQkauJ9RA/viewform">Book Demo</a>
               </Button>
             </div>
           </div>

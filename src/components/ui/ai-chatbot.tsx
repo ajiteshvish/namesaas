@@ -37,7 +37,7 @@ const predefinedResponses = {
         "We've got your back with multiple support options:\n\n💬 **Live Chat** - Available 24/7\n📧 **Email Support** - support@saralone.com\n📞 **Phone Support** - For Professional & Enterprise plans\n📚 **Knowledge Base** - Comprehensive guides\n🎥 **Video Tutorials** - Step-by-step walkthroughs\n\nOur average response time is under 2 hours. Plus, our AI handles most of the work automatically, so you'll rarely need support!\n\nNeed help with something specific?"
     ],
     demo: [
-        "I'd love to show you SARALONE in action! Here's what you can do:\n\n🎬 **Watch Our Demo Video**\n• See real results from actual businesses\n• 3-minute overview of key features\n\n🆓 **Start Free Trial**\n• No credit card required\n• Full access to all features\n• 14 days to explore everything\n\n📞 **Book a Personal Demo**\n• One-on-one walkthrough\n• Customized to your business\n• Q&A with our experts\n\nWhich option sounds best for you?"
+        "I'd love to show you SARALONE in action! Here's what you can do:\n\n📞 **Book a Personal Demo**\n• One-on-one walkthrough with our experts\n• Customized to your business needs\n• Q&A with our team\n• See real results from actual businesses\n\n🆓 **Start Free Trial**\n• No credit card required\n• Full access to all features\n• 14 days to explore everything\n\nReady to book your demo? Click here: https://docs.google.com/forms/d/e/1FAIpQLSe6ao8MXwubcMeoWlHzb-mTNVf4id50Dq7xXBW3YqQkauJ9RA/viewform"
     ]
 };
 
@@ -47,7 +47,7 @@ const quickReplies = [
     "How does it work?",
     "Tell me about review management",
     "Do you offer support?",
-    "Can I see a demo?"
+    "Can I book a demo?"
 ];
 
 export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
@@ -129,7 +129,7 @@ export function AIChatbot({ isOpen, onClose }: ChatbotProps) {
         }
 
         // Demo patterns
-        if (message.includes('demo') || message.includes('trial') || message.includes('test') || message.includes('try')) {
+        if (message.includes('demo') || message.includes('trial') || message.includes('test') || message.includes('try') || message.includes('book')) {
             return predefinedResponses.demo[0];
         }
 

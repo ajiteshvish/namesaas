@@ -42,7 +42,7 @@ const navItems = [
       {
         title: 'For Teams',
         items: [
-          { icon: Users, label: 'For Agencies', description: 'Handle more local SEO client profiles with automation', href: '#agencies', badge: 'Book A Demo' },
+          { icon: Users, label: 'For Agencies', description: 'Handle more local SEO client profiles with automation', href: 'https://docs.google.com/forms/d/e/1FAIpQLSe6ao8MXwubcMeoWlHzb-mTNVf4id50Dq7xXBW3YqQkauJ9RA/viewform', badge: 'Book Demo' },
           { icon: Building2, label: 'For Business Owners', description: 'Get found by local customers ready to buy your services or products', href: '#business' }
         ]
       }
